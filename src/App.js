@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { Col, Container, Row } from "react-bootstrap";
+import { Hasil, ListCategories, NavBar } from "./component";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <div className="mt-3">
+        <Container fluid>
+          <Row>
+            <ListCategories />
+            <Col>
+              <h4>
+                <strong>Daftar Product</strong>
+              </h4>
+              <hr />
+            </Col>
+            <Hasil />
+          </Row>
+        </Container>
+      </div>
     </div>
   );
 }
