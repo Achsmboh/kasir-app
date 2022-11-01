@@ -12,3 +12,8 @@ body {
 code {
   font-family: "Public Sans", sans-serif;
 }
+
+.category-aktif {
+  background-color: #22668a;
+  color: white;
+}
