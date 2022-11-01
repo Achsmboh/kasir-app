@@ -3,10 +3,10 @@ import { Card, Col } from "react-bootstrap";
 import { numberWithCommas } from "../utils/utils";
 import baksojpg from "../assets/images/makanan/bakso.jpg";
 
-const Menus = ({ menu }) => {
+const Menus = ({ menu, masukKeranjang }) => {
   return (
     <Col md={4} xs={6} className="mb-2">
-      <Card className="shadow">
+      <Card className="shadow" onClick={() => masukKeranjang(menu)}>
         <Card.Img variant="top" src={baksojpg} />
         <Card.Body>
           <Card.Title>
