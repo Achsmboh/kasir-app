@@ -138,7 +138,7 @@ export default class Home extends Component {
                 <hr />
                 <Row>{menus && menus.map((menu) => <Menus key={menu.id} menu={menu} masukKeranjang={this.masukKeranjang} />)}</Row>
               </Col>
-              <Hasil keranjangs={keranjangs} />
+              <Hasil keranjangs={keranjangs} {...this.props} />
             </Row>
           </Container>
         </div>
