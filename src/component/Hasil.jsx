@@ -107,7 +107,10 @@ export default class Hasil extends Component {
     const { keranjangs } = this.props;
     return (
       <Col md={3} mt="2">
-        <strong>Hasil</strong>
+        <h4>
+          <strong>Hasil</strong>
+        </h4>
+
         <hr />
         {keranjangs.length !== 0 && (
           <Card className="overflow-auto hasil">
