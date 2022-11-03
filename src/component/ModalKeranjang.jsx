@@ -4,7 +4,7 @@ import { numberWithCommas } from "../utils/utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus, faTrash } from "@fortawesome/free-solid-svg-icons";
 
-const ModalKeranjang = ({ showModal, handleClose, keranjangDetail, jumlah, keterangan, tambah, kurang, changeHandler, handleSubmit }) => {
+const ModalKeranjang = ({ showModal, handleClose, keranjangDetail, jumlah, keterangan, tambah, kurang, changeHandler, handleSubmit, totalHarga, hapusPesanan }) => {
   if (keranjangDetail) {
     return (
       <Modal show={showModal} onHide={handleClose}>
@@ -19,19 +19,19 @@ const ModalKeranjang = ({ showModal, handleClose, keranjangDetail, jumlah, keter
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Total Harga :</Form.Label>
               <strong>
-                <p>Rp.{numberWithCommas(keranjangDetail.total_harga)}</p>
+                <p>Rp.{numberWithCommas(totalHarga)}</p>
               </strong>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Jumlah :</Form.Label>
               <br />
-              <Button variant="primary" size="sm" className="me-2" onClick={() => tambah()}>
-                <FontAwesomeIcon icon={faPlus} />
+              <Button onClick={() => kurang()} variant="primary" size="sm" className="me-2">
+                <FontAwesomeIcon icon={faMinus} />
               </Button>
               <strong>{jumlah}</strong>
-              <Button onClick={() => kurang()} variant="primary" size="sm" className="ms-2">
-                <FontAwesomeIcon icon={faMinus} />
+              <Button variant="primary" size="sm" className="ms-2" onClick={() => tambah()}>
+                <FontAwesomeIcon icon={faPlus} />
               </Button>
             </Form.Group>
 
@@ -46,9 +46,8 @@ const ModalKeranjang = ({ showModal, handleClose, keranjangDetail, jumlah, keter
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="danger">
-            <FontAwesomeIcon icon={faTrash} />
-            Save Changes
+          <Button variant="danger" onClick={() => hapusPesanan(keranjangDetail.id)}>
+            <FontAwesomeIcon icon={faTrash} /> Hapus Pesanan
           </Button>
         </Modal.Footer>
       </Modal>
