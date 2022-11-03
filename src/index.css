@@ -9,6 +9,20 @@ body {
   background-color: #22668a;
 }
 
+.overflow-auto::-webkit-scrollbar {
+  display: none;
+}
+
+@media only screen and (max-height: 1000px) {
+  .hasil {
+    height: 650px;
+  }
+
+  .menu {
+    height: 650px;
+  }
+}
+
 .btn-primary {
   background-color: #22668a;
   color: white;

@@ -136,7 +136,7 @@ export default class Home extends Component {
                   <strong>Daftar Product</strong>
                 </h4>
                 <hr />
-                <Row>{menus && menus.map((menu) => <Menus key={menu.id} menu={menu} masukKeranjang={this.masukKeranjang} />)}</Row>
+                <Row className="overflow-auto menu">{menus && menus.map((menu) => <Menus key={menu.id} menu={menu} masukKeranjang={this.masukKeranjang} />)}</Row>
               </Col>
               <Hasil keranjangs={keranjangs} {...this.props} />
             </Row>
