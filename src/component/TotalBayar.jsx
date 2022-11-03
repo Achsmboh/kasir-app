@@ -25,18 +25,34 @@ export default class TotalBayar extends Component {
       return result + item.total_harga;
     }, 0);
     return (
-      <div className="fixed-bottom">
-        <Row>
-          <Col md={{ span: 3, offset: 9 }} className="px-4">
-            <h4>
-              Total Harga : Rp.<strong className="float-end me-2">{numberWithCommas(totalBayar)}</strong>
-            </h4>
-            <Button as={Link} to="/sukses" variant="primary" className="w-100 mb-2 mt-2 me-2" size="lg" onClick={() => this.submitTotalBayar(totalBayar)}>
-              <FontAwesomeIcon icon={faShoppingCart} /> <strong>BAYAR</strong>
-            </Button>
-          </Col>
-        </Row>
-      </div>
+      <>
+        {/* Web */}
+        <div className="fixed-bottom d-none d-md-block">
+          <Row>
+            <Col md={{ span: 3, offset: 9 }} className="px-4">
+              <h4>
+                Total Harga : Rp.<strong className="float-end me-2">{numberWithCommas(totalBayar)}</strong>
+              </h4>
+              <Button as={Link} to="/sukses" variant="primary" className="w-100 mb-2 mt-2 me-2" size="lg" onClick={() => this.submitTotalBayar(totalBayar)}>
+                <FontAwesomeIcon icon={faShoppingCart} /> <strong>BAYAR</strong>
+              </Button>
+            </Col>
+          </Row>
+        </div>
+        {/* Mobile */}
+        <div className="d-sm-block d-md-none">
+          <Row>
+            <Col md={{ span: 3, offset: 9 }} className="px-4">
+              <h4>
+                Total Harga : Rp.<strong className="float-end me-2">{numberWithCommas(totalBayar)}</strong>
+              </h4>
+              <Button as={Link} to="/sukses" variant="primary" className="w-100 mb-2 mt-2 me-2" size="lg" onClick={() => this.submitTotalBayar(totalBayar)}>
+                <FontAwesomeIcon icon={faShoppingCart} /> <strong>BAYAR</strong>
+              </Button>
+            </Col>
+          </Row>
+        </div>
+      </>
     );
   }
 }
